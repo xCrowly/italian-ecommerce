@@ -3,9 +3,9 @@
 :root {
   --background: #fcfbf7;
   --foreground: #171717;
-  --primary: #4a5d23;
-  --secondary: #f5f5dc;
-  --accent-terracotta: #e07a5f;
+  --primary: #183B4E;
+  --secondary: #F5EEDC;
+  --accent-terracotta: #EC5228;
   --accent-navy: #2c3e50;
 }
 
@@ -25,9 +25,9 @@
   :root {
     --background: #fcfbf7;
     --foreground: #171717;
-    --primary: #4a5d23;
-    --secondary: #f5f5dc;
-    --accent-terracotta: #e07a5f;
+    --primary: #183B4E;
+    --secondary: #F5EEDC;
+    --accent-terracotta: #EC5228;
     --accent-navy: #2c3e50;
   }
 }

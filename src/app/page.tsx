@@ -15,21 +15,43 @@ export default function HomePage() {
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-primary text-secondary py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6">
-              Autentici Prodotti Italiani
-            </h1>
-            <p className="text-xl max-w-2xl mx-auto mb-8">
-              {` Scopri la tradizione e l'artigianalità italiana direttamente a casa tua`}
-            </p>
-            <Link href="/products">
-              <Button className="bg-accent-terracotta hover:bg-accent-terracotta/90 text-white">
-                Esplora la collezione{" "}
-                <ChevronRight className="ml-2" size={20} />
-              </Button>
-            </Link>
+      <section className="relative bg-primary text-secondary min-h-[90vh]">
+        <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-0">
+          <div className="relative w-full h-full overflow-hidden transform transition-transform duration-700 hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent mix-blend-overlay"></div>
+            <img
+              src="/images/header-1.jpg"
+              alt="Italian clothing storage"
+              className="w-full h-full object-cover blur-[2px] brightness-50"
+            />
+          </div>
+          <div className="relative w-full h-full overflow-hidden transform transition-transform duration-700 hover:scale-105">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent mix-blend-overlay"></div>
+            <img
+              src="/images/header-2.jpg"
+              alt="Italian retail display"
+              className="w-full h-full object-cover blur-[2px] brightness-50"
+            />
+          </div>
+        </div>
+        <div className="relative h-auto flex items-center justify-center">
+          <div className="max-w-7xl m-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div className="text-center">
+              <div className="my-30  backdrop-blur-md bg-white/40 p-8 rounded-3xl border border-white/75 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">
+                  Autentici Prodotti Italiani
+                </h1>
+                <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-gray-200">
+                  {`Scopri la tradizione e l'artigianalità italiana direttamente a casa tua`}
+                </p>
+                <Link href="/products">
+                  <Button className="bg-accent-terracotta hover:bg-accent-terracotta/90 text-white text-lg px-8 py-4 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Esplora la collezione{" "}
+                    <ChevronRight className="ml-2 animate-pulse" size={24} />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
