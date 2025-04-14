@@ -1,0 +1,59 @@
+italian-ecommerce/
+├── .next/
+├── node_modules/
+├── public/
+│   ├── images/          # Product images, logos
+│   └── data/            # JSON product data files
+├── src/
+│   ├── app/             # Next.js App Router
+│   │   ├── api/         # API routes
+│   │   │   └── products/# Product API endpoints
+│   │   │       └── route.ts  # TypeScript API handler
+│   │   ├── cart/        # Cart page
+│   │   │   └── page.tsx # Cart page component
+│   │   ├── checkout/    # Checkout page
+│   │   │   └── page.tsx # Checkout page component
+│   │   ├── products/    # Product pages
+│   │   │   ├── [id]/    # Dynamic product detail page
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx # Products listing page
+│   │   ├── layout.tsx   # Root layout
+│   │   └── page.tsx     # Home page
+│   ├── components/      # Reusable components
+│   │   ├── ui/          # Basic UI components
+│   │   ├── layout/      # Layout components
+│   │   ├── product/     # Product-related components
+│   │   └── cart/        # Cart-related components
+│   ├── context/
+│   │   └── CartContext.tsx  # Cart state management
+│   ├── lib/             # Utilities and helpers
+│   │   ├── stripe.ts    # Stripe integration
+│   │   └── api.ts       # API helper functions
+│   ├── hooks/
+│   │   └── useCart.ts   # Custom hook for cart operations
+│   ├── types/           # TypeScript type definitions
+│   │   ├── product.ts   # Product type interfaces
+│   │   └── cart.ts      # Cart type interfaces
+│   └── styles/          # Tailwind configuration
+├── package.json
+├── tailwind.config.ts   # TypeScript for Tailwind config
+├── next.config.js       # Next.js configuration
+├── tsconfig.json        # TypeScript configuration
+└── README.md
+
+Frontend Core:
+
+Next.js (React framework)
+Tailwind CSS (styling)
+React Context API (for cart state management)
+
+Data Management:
+
+Next.js API routes for product data
+localStorage for cart persistence
+JSON files for mock product database
+
+Additional Technologies:
+
+React Query (for data fetching)
+Stripe (for payment processing simulation)
