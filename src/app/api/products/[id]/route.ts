@@ -3,9 +3,9 @@ import { products } from '@/data/products';
 
 export async function GET(
   request: Request,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
-  const product = products.find(p => p.id === context.params.id);
+  const product = products.find(p => p.id === params.id);
   
   if (!product) {
     return new NextResponse('Product not found', { status: 404 });
