@@ -5,13 +5,15 @@ import { Button } from "@/components/ui/Button";
 import { Star, ChevronRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchFeaturedProducts } from "@/lib/api";
+import { useCart } from "@/context/CartContext";
+import Image from "next/image";
 
 export default function HomePage() {
   const { data: products, isLoading } = useQuery({
     queryKey: ["featured-products"],
     queryFn: fetchFeaturedProducts,
   });
-
+  const { addToCart } = useCart();
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
@@ -19,18 +21,22 @@ export default function HomePage() {
         <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-0">
           <div className="relative w-full h-full overflow-hidden transform transition-transform duration-700 hover:scale-105">
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent mix-blend-overlay"></div>
-            <img
+            <Image
               src="/images/header-1.jpg"
               alt="Italian clothing storage"
-              className="w-full h-full object-cover blur-[2px] brightness-50"
+              className="w-full h-full object-cover blur-[2px] brightness-75"
+              fill
+              sizes="50vw"
             />
           </div>
           <div className="relative w-full h-full overflow-hidden transform transition-transform duration-700 hover:scale-105">
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent mix-blend-overlay"></div>
-            <img
+            <Image
               src="/images/header-2.jpg"
               alt="Italian retail display"
-              className="w-full h-full object-cover blur-[2px] brightness-50"
+              className="w-full h-full object-cover blur-[2px] brightness-75"
+              fill
+              sizes="50vw"
             />
           </div>
         </div>
@@ -128,7 +134,12 @@ export default function HomePage() {
                           className="text-sm p-2 bg-primary hover:bg-primary/90 text-white"
                           onClick={(e) => {
                             e.preventDefault();
-                            // Add to cart function here
+                            addToCart({
+                              id: product.id,
+                              name: product.name,
+                              price: product.price,
+                              image: product.image,
+                            });
                           }}
                         >
                           Aggiungi

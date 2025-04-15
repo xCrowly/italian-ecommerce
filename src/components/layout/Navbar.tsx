@@ -10,6 +10,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const { itemCount } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown
+  const { cartItems } = useCart();
 
   return (
     <nav className="bg-secondary border-b border-secondary sticky top-0 z-50">
@@ -53,14 +55,43 @@ export default function Navbar() {
             </Link>
 
             {/* Cart with indicator */}
-            <Link href="/cart" className="relative">
-              <CartIcon className="h-6 w-6 text-foreground hover:text-primary" />
-              {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-accent-terracotta text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                  {itemCount}
-                </span>
+            <div
+              className="relative"
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <Link href="/cart" className="relative">
+                <CartIcon className="h-6 w-6 text-foreground hover:text-primary" />
+                {itemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-accent-terracotta text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
+              </Link>
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 min-w-96 p-2 bg-white shadow-lg rounded-md z-50">
+                  <div className="p-2">
+                    {cartItems.length === 0 ? (
+                      <p className="text-center text-gray-500">
+                        No items in cart
+                      </p>
+                    ) : (
+                      cartItems.map((item) => (
+                        <div
+                          key={item.id}
+                          className="flex justify-between py-1 font-normal"
+                        >
+                          <span className="me-2">{item.name}</span>
+                          <span className="text-sm text-primary font-bold">
+                            {item.quantity} x €{item.price.toFixed(2)}
+                          </span>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
               )}
-            </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}

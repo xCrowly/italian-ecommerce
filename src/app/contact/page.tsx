@@ -74,7 +74,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-background min-h-screen py-12">
+    <div className="bg-background min-h-screen py-12  container mx-auto max-w-3xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-serif font-bold text-primary mb-8">
           Contattami
@@ -97,7 +97,7 @@ export default function ContactPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="mt-1 block w-full border border-secondary rounded-lg p-2"
+              className="mt-1 block w-full border border-secondary bg-gray-100 rounded-lg p-2"
             />
           </div>
           <div>
@@ -113,7 +113,7 @@ export default function ContactPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="mt-1 block w-full border border-secondary rounded-lg p-2"
+              className="mt-1 block w-full border border-secondary bg-gray-100 rounded-lg p-2"
             />
           </div>
           <div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
-              className="mt-1 block w-full border border-secondary rounded-lg p-2"
+              className="mt-1 block w-full border border-secondary bg-gray-100 rounded-lg p-2"
               rows={4}
             />
           </div>

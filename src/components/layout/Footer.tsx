@@ -1,6 +1,14 @@
-import React from 'react';
-import { MapPin, Mail, Phone, Clock, Instagram, Facebook, Twitter } from 'lucide-react';
-import Link from 'next/link';
+import React from "react";
+import {
+  MapPin,
+  Mail,
+  Phone,
+  Clock,
+  Instagram,
+  Facebook,
+  Twitter,
+} from "lucide-react";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +17,9 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="font-serif text-xl font-bold text-primary">Bella Italia</h3>
+            <h3 className="font-serif text-xl font-bold text-primary">
+              Bella Italia
+            </h3>
             <p className="text-sm">
               Bringing authentic Italian products to your doorstep since 2010.
             </p>
@@ -28,22 +38,27 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="font-serif text-lg font-semibold text-primary">Contact Us</h4>
+            <h4 className="font-serif text-lg font-semibold text-primary">
+              Contact Us
+            </h4>
             <ul className="space-y-2 text-sm">
               <li className="flex items-start">
                 <MapPin className="mr-2 mt-0.5 flex-shrink-0" size={16} />
-                <span>Via Roma 123, 00100 Rome, Italy</span>
+                <span>Milano, Italy</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2" size={16} />
-                <a href="mailto:info@bellaitalia.com" className="hover:underline">
-                  info@bellaitalia.com
+                <a
+                  href="mailto:badawy.ca@gmail.com"
+                  className="hover:underline"
+                >
+                  badawy.ca@gmail.com
                 </a>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2" size={16} />
-                <a href="tel:+390612345678" className="hover:underline">
-                  +39 06 1234 5678
+                <a href="tel:+393928097565" className="hover:underline">
+                  +39 39 2809 7565
                 </a>
               </li>
               <li className="flex items-start">
@@ -55,30 +70,47 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-serif text-lg font-semibold text-primary">Quick Links</h4>
+            <h4 className="font-serif text-lg font-semibold text-primary">
+              Quick Links
+            </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="hover:underline hover:text-primary">
+                <Link
+                  href="/about"
+                  className="hover:underline hover:text-primary"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="hover:underline hover:text-primary">
+                <Link
+                  href="/products"
+                  className="hover:underline hover:text-primary"
+                >
                   Our Products
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:underline hover:text-primary">
+                <Link
+                  href="/blog"
+                  className="hover:underline hover:text-primary"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:underline hover:text-primary">
+                <Link
+                  href="/faq"
+                  className="hover:underline hover:text-primary"
+                >
                   FAQs
                 </Link>
               </li>
               <li>
-                <Link href="/wholesale" className="hover:underline hover:text-primary">
+                <Link
+                  href="/wholesale"
+                  className="hover:underline hover:text-primary"
+                >
                   Wholesale Inquiries
                 </Link>
               </li>
@@ -87,30 +119,47 @@ const Footer: React.FC = () => {
 
           {/* Policies */}
           <div className="space-y-4">
-            <h4 className="font-serif text-lg font-semibold text-primary">Policies</h4>
+            <h4 className="font-serif text-lg font-semibold text-primary">
+              Policies
+            </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/privacy" className="hover:underline hover:text-primary">
+                <Link
+                  href="/privacy"
+                  className="hover:underline hover:text-primary"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:underline hover:text-primary">
+                <Link
+                  href="/terms"
+                  className="hover:underline hover:text-primary"
+                >
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/shipping" className="hover:underline hover:text-primary">
+                <Link
+                  href="/shipping"
+                  className="hover:underline hover:text-primary"
+                >
                   Shipping Policy
                 </Link>
               </li>
               <li>
-                <Link href="/returns" className="hover:underline hover:text-primary">
+                <Link
+                  href="/returns"
+                  className="hover:underline hover:text-primary"
+                >
                   Returns & Refunds
                 </Link>
               </li>
               <li>
-                <Link href="/cookies" className="hover:underline hover:text-primary">
+                <Link
+                  href="/cookies"
+                  className="hover:underline hover:text-primary"
+                >
                   Cookie Policy
                 </Link>
               </li>
@@ -155,4 +204,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
