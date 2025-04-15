@@ -14,7 +14,7 @@ export default function ReturnsAndRefundsPage() {
             1. Return Policy Overview
           </h2>
           <p className="text-foreground/80">
-            We want you to be completely satisfied with your purchase. If you're not happy with your order, we accept returns within 30 days of delivery for a full refund or exchange.
+            We want you to be completely satisfied with your purchase. If you&apos;re not happy with your order, we accept returns within 30 days of delivery for a full refund or exchange.
           </p>
         </section>
 

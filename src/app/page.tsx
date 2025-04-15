@@ -91,15 +91,25 @@ export default function HomePage() {
               {products?.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-secondary rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-secondary rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
                 >
                   <Link href={`/products/${product.id}`}>
                     <div className="aspect-square bg-white relative overflow-hidden">
-                      <img
+                      {/* <img
                         src={product.image}
                         alt={product.name}
                         className="object-cover w-full h-full p-4"
-                      />
+                      /> */}
+                      <div className="relative w-full h-full p-4">
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          sizes="auto"
+                          priority
+                          className="object-cover"
+                        />
+                      </div>
                       {product.isFeatured && (
                         <div className="absolute top-2 right-2 bg-accent-terracotta text-white text-xs font-bold px-2 py-1 rounded">
                           Featured
@@ -131,7 +141,7 @@ export default function HomePage() {
                           €{product.price.toFixed(2)}
                         </span>
                         <Button
-                          className="text-sm p-2 bg-primary hover:bg-primary/90 text-white"
+                          className="text-md px-5 py-3 bg-primary hover:bg-primary/90 hover:scale-110 hover:cursor-pointer text-white"
                           onClick={(e) => {
                             e.preventDefault();
                             addToCart({

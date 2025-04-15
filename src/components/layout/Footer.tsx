@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="mt-12 pt-6 border-t border-background text-center text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Bella Italia. All rights reserved.
+            © {new Date().getFullYear()} Bella Italia. All rights reserved.
             P.IVA: IT12345678901
           </p>
           <p className="mt-1 text-foreground/70">

@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { itemCount } = useCart();
+  const { itemCount, cartAnimation } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown
   const { cartItems } = useCart();
@@ -61,9 +61,13 @@ export default function Navbar() {
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <Link href="/cart" className="relative">
-                <CartIcon className="h-6 w-6 text-foreground hover:text-primary" />
+                <CartIcon className={`h-6 w-6 text-foreground hover:text-primary transition-transform ${
+                  cartAnimation ? 'animate-bounce scale-125' : ''
+                }`} />
                 {itemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-accent-terracotta text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className={`absolute -top-2 -right-2 bg-accent-terracotta text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center ${
+                    cartAnimation ? 'animate-ping' : ''
+                  }`}>
                     {itemCount}
                   </span>
                 )}
@@ -164,7 +168,7 @@ export default function Navbar() {
               pathname === "/cart"
                 ? "bg-primary text-white"
                 : "text-foreground hover:bg-primary hover:text-white"
-            } block px-3 py-2 rounded-md text-base font-medium flex items-center`}
+            }  px-3 py-2 rounded-md text-base font-medium flex items-center`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Carrello

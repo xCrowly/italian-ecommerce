@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
             1. Agreement to Terms
           </h2>
           <p className="text-foreground/80">
-            By accessing and using Bella Italia's website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+            By accessing and using Bella Italia&apos;s website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
           </p>
         </section>
 

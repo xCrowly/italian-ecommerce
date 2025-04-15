@@ -13,7 +13,7 @@ const AboutPage = () => {
             La Nostra Storia
           </h1>
           <p className="text-xl max-w-2xl mx-auto">
-            {`L'eleganza italiana incontra l'artigianalità moderna`}
+            {`L&apos;eleganza italiana incontra l&apos;artigianalità moderna`}
           </p>
         </div>
       </section>
@@ -30,7 +30,7 @@ const AboutPage = () => {
               <div className="space-y-4 text-foreground">
                 <p>
                   {`Fondata nel 2010 a Milano, Bella Italia nasce dalla passione per la moda italiana 
-                  e il desiderio di portare l'autentico stile italiano in tutto il mondo.`}
+                  e il desiderio di portare l&apos;autentico stile italiano in tutto il mondo.`}
                 </p>
                 <p>
                   Ogni capo della nostra collezione è realizzato con tessuti
@@ -38,7 +38,7 @@ const AboutPage = () => {
                   sartoriale italiana mentre abbracciamo design contemporanei.
                 </p>
                 <p>
-                  {`Oggi spediamo i nostri capi in oltre 50 paesi, portando un pezzo d'Italia agli 
+                  {`Oggi spediamo i nostri capi in oltre 50 paesi, portando un pezzo d&apos;Italia agli 
                   amanti della moda in tutto il mondo.`}
                 </p>
               </div>
@@ -138,7 +138,7 @@ const AboutPage = () => {
             Pronto a scoprire la vera moda italiana?
           </h2>
           <p className="mb-6 max-w-2xl mx-auto">
-            {`Esplora la nostra collezione e vesti l'eleganza senza tempo dello stile italiano.`}
+            {`Esplora la nostra collezione e vesti l&apos;eleganza senza tempo dello stile italiano.`}
           </p>
           <Link href="/products">
             <button className="bg-primary hover:bg-primary/90 text-white font-medium rounded-md px-8 py-3 transition-colors">

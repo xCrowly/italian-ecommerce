@@ -171,7 +171,7 @@ export default function WholesalePage() {
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-2 rounded-md border border-background focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="Tell us about your business and what products you're interested in..."
+                placeholder="Tell us about your business and what products you&apos;re interested in..."
               />
             </div>
 

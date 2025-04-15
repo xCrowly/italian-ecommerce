@@ -4,6 +4,7 @@ import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface CheckoutFormData {
   firstName: string;
@@ -83,11 +84,15 @@ export default function CheckoutPage() {
                 >
                   <div className="flex items-center">
                     {item.image && (
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-16 h-16 object-cover rounded mr-4"
-                      />
+                      <div className="relative w-16 h-16 mr-4">
+                        <Image
+                          src={item.image}
+                          alt={item.name}
+                          fill
+                          sizes="64px" // 64px = 16 * 4px (4px is the default tailwind unit)
+                          className="object-cover rounded"
+                        />
+                      </div>
                     )}
                     <div>
                       <h3 className="font-medium">{item.name}</h3>
@@ -131,7 +136,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
                 <div>
@@ -148,7 +153,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
               </div>
@@ -167,7 +172,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                  className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                 />
               </div>
 
@@ -185,7 +190,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.address}
                   onChange={handleInputChange}
-                  className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                  className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                 />
               </div>
 
@@ -204,7 +209,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
                 <div>
@@ -221,7 +226,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.postalCode}
                     onChange={handleInputChange}
-                    className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
               </div>
@@ -240,7 +245,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.country}
                   onChange={handleInputChange}
-                  className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                  className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                 />
               </div>
 

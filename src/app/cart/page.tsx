@@ -4,6 +4,7 @@ import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 import { Button } from "../../components/ui/Button";
 import { Trash2 } from "lucide-react";
+import Image from "next/image";
 
 export default function CartPage() {
   const {
@@ -52,11 +53,17 @@ export default function CartPage() {
                         {/* Product Image */}
                         <div className="w-full sm:w-32 h-32 bg-white rounded-md overflow-hidden flex items-center justify-center">
                           {item.image ? (
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              className="object-cover w-full h-full"
-                            />
+                            <div className="relative w-full h-full">
+                              {" "}
+                              <Image
+                                src={item.image}
+                                alt={item.name}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                priority
+                                className="object-cover"
+                              />
+                            </div>
                           ) : (
                             <div className="text-foreground/30">No image</div>
                           )}

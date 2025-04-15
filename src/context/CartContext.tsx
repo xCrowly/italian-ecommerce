@@ -19,6 +19,7 @@ interface CartContextType {
   cartTotal: number;
   itemCount: number;
   isInCart: (id: string) => boolean;
+  cartAnimation: boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -26,6 +27,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isMounted, setIsMounted] = useState(false);
+  const [cartAnimation, setCartAnimation] = useState(false);
 
   // Set mounted state to true after component mounts
   useEffect(() => {
@@ -68,6 +70,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       }
       return [...prevItems, { ...item, quantity: 1 }];
     });
+    
+    // Trigger animation
+    setCartAnimation(true);
+    setTimeout(() => setCartAnimation(false), 300);
   };
 
   const removeFromCart = (id: string) => {
@@ -110,6 +116,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         cartTotal,
         itemCount,
         isInCart,
+        cartAnimation,
       }}
     >
       {children}

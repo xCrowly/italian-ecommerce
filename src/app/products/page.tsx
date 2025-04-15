@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Star, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import Image from "next/image";
 
 interface Product {
   id: string;
@@ -71,7 +72,7 @@ export default function ProductsPage() {
           if (minPrice || maxPrice) {
             return isInCustomRange;
           }
-          
+
           // Otherwise, use dropdown selection
           switch (priceRange) {
             case "under-50":
@@ -105,7 +106,7 @@ export default function ProductsPage() {
   const getPageNumbers = () => {
     const pageNumbers = [];
     const maxPagesToShow = 5;
-    
+
     if (totalPages <= maxPagesToShow) {
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
@@ -115,21 +116,21 @@ export default function ProductsPage() {
         for (let i = 1; i <= 4; i++) {
           pageNumbers.push(i);
         }
-        pageNumbers.push('...');
+        pageNumbers.push("...");
         pageNumbers.push(totalPages);
       } else if (currentPage >= totalPages - 2) {
         pageNumbers.push(1);
-        pageNumbers.push('...');
+        pageNumbers.push("...");
         for (let i = totalPages - 3; i <= totalPages; i++) {
           pageNumbers.push(i);
         }
       } else {
         pageNumbers.push(1);
-        pageNumbers.push('...');
+        pageNumbers.push("...");
         for (let i = currentPage - 1; i <= currentPage + 1; i++) {
           pageNumbers.push(i);
         }
-        pageNumbers.push('...');
+        pageNumbers.push("...");
         pageNumbers.push(totalPages);
       }
     }
@@ -258,15 +259,20 @@ export default function ProductsPage() {
               {filteredAndSortedProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-secondary rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-secondary rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
                 >
                   <Link href={`/products/${product.id}`}>
                     <div className="aspect-square bg-white relative overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="object-cover w-full h-full p-4"
-                      />
+                      <div className="relative w-full h-full p-4">
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          sizes="auto"
+                          priority
+                          className="object-cover"
+                        />
+                      </div>
                       {product.isFeatured && (
                         <div className="absolute top-2 right-2 bg-accent-terracotta text-white text-xs font-bold px-2 py-1 rounded">
                           Featured
@@ -283,7 +289,9 @@ export default function ProductsPage() {
                             <Star
                               key={i}
                               size={16}
-                              fill={i < product.rating ? "currentColor" : "none"}
+                              fill={
+                                i < product.rating ? "currentColor" : "none"
+                              }
                             />
                           ))}
                         </div>
@@ -296,7 +304,7 @@ export default function ProductsPage() {
                           €{product.price.toFixed(2)}
                         </span>
                         <Button
-                          className="text-sm p-2 bg-primary hover:bg-primary/90 text-white"
+                          className="text-md px-5 py-3 bg-primary hover:bg-primary/90 hover:scale-110 hover:cursor-pointer text-white"
                           onClick={(e) => {
                             e.preventDefault();
                             addToCart({
@@ -321,21 +329,21 @@ export default function ProductsPage() {
               <Button
                 variant="outline"
                 className="p-2"
-                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
               >
                 <ChevronLeft size={20} />
               </Button>
-              
+
               {getPageNumbers().map((pageNum, index) => (
                 <Button
                   key={index}
                   variant={pageNum === currentPage ? "primary" : "outline"}
                   className={`px-4 py-2 ${
-                    pageNum === '...' ? 'pointer-events-none' : ''
+                    pageNum === "..." ? "pointer-events-none" : ""
                   }`}
                   onClick={() => {
-                    if (typeof pageNum === 'number') {
+                    if (typeof pageNum === "number") {
                       setCurrentPage(pageNum);
                     }
                   }}
@@ -347,7 +355,9 @@ export default function ProductsPage() {
               <Button
                 variant="outline"
                 className="p-2"
-                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+                }
                 disabled={currentPage === totalPages}
               >
                 <ChevronRight size={20} />

@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
             1. Introduction
           </h2>
           <p className="text-foreground/80">
-            Bella Italia ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+            Bella Italia (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
           </p>
         </section>
 
