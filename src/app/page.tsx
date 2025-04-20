@@ -26,6 +26,7 @@ export default function HomePage() {
               alt="Italian clothing storage"
               className="w-full h-full object-cover blur-[2px] brightness-75"
               fill
+              priority
               sizes="50vw"
             />
           </div>
@@ -36,18 +37,19 @@ export default function HomePage() {
               alt="Italian retail display"
               className="w-full h-full object-cover blur-[2px] brightness-75"
               fill
+              priority
               sizes="50vw"
             />
           </div>
         </div>
-        <div className="relative h-auto flex items-center justify-center">
+        <div className="relative h-screen flex items-center justify-center">
           <div className="max-w-7xl m-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="text-center">
-              <div className="my-30  backdrop-blur-md bg-white/40 p-8 rounded-3xl border border-white/75 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">
+              <div className="py-16 backdrop-blur-md bg-gradient-to-br from-red-100/30 via-blue-300/20 to-pink-300/30 p-8 rounded-3xl border border-white/75 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
                   Autentici Prodotti Italiani
                 </h1>
-                <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-gray-200">
+                <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
                   {`Scopri la tradizione e l'artigianalità italiana direttamente a casa tua`}
                 </p>
                 <Link href="/products">
@@ -137,7 +139,7 @@ export default function HomePage() {
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-primary font-bold">
+                        <span className="text-accent-navy font-bold">
                           €{product.price.toFixed(2)}
                         </span>
                         <Button

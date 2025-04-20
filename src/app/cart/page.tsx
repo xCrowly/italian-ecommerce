@@ -40,7 +40,7 @@ export default function CartPage() {
             <div className="lg:col-span-2">
               <div className="bg-secondary rounded-lg shadow-sm overflow-hidden">
                 <div className="p-6 border-b border-background">
-                  <h2 className="text-lg font-medium text-foreground">
+                  <h2 className="text-lg font-bold text-foreground">
                     {itemCount} {itemCount === 1 ? "articolo" : "articoli"} nel
                     carrello
                   </h2>
@@ -72,7 +72,7 @@ export default function CartPage() {
                         {/* Product Details */}
                         <div className="flex-1">
                           <div className="flex justify-between">
-                            <h3 className="text-lg font-medium text-foreground">
+                            <h3 className="text-xl font-medium text-foreground">
                               {item.name}
                             </h3>
                             <button
@@ -124,7 +124,7 @@ export default function CartPage() {
                 <div className="p-6 border-t border-background flex justify-end">
                   <button
                     onClick={clearCart}
-                    className="text-sm text-accent-terracotta hover:underline"
+                    className="text-medium font-medium text-accent-terracotta hover:underline"
                   >
                     Svuota carrello
                   </button>

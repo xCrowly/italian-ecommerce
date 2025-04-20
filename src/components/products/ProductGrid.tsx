@@ -77,7 +77,7 @@ export default function ProductGrid({ products }: { products: Product[] }) {
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-primary font-bold">
+                    <span className="text-accent-navy  font-bold">
                       €{product.price.toFixed(2)}
                     </span>
                     <Button
