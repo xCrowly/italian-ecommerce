@@ -136,7 +136,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-gray-50 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
                 <div>
@@ -153,7 +153,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-gray-50 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
               </div>
@@ -172,7 +172,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                  className="w-full p-2 border bg-gray-50 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                 />
               </div>
 
@@ -190,7 +190,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.address}
                   onChange={handleInputChange}
-                  className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                  className="w-full p-2 border bg-gray-50 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                 />
               </div>
 
@@ -209,7 +209,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-gray-50 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
                 <div>
@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.postalCode}
                     onChange={handleInputChange}
-                    className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                    className="w-full p-2 border bg-gray-50 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                   />
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.country}
                   onChange={handleInputChange}
-                  className="w-full p-2 border bg-background border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
+                  className="w-full p-2 border bg-gray-50 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-accent-terracotta"
                 />
               </div>
 

@@ -24,13 +24,13 @@ const Footer: React.FC = () => {
               Bringing authentic Italian products to your doorstep since 2010.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-primary hover:text-accent-terracotta">
+              <a href="https://www.linkedin.com/in/ahmed-badawy-61bb7a213/" target="_blank" className="text-primary hover:text-accent-terracotta">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-primary hover:text-accent-terracotta">
+              <a href="https://www.linkedin.com/in/ahmed-badawy-61bb7a213/" target="_blank" className="text-primary hover:text-accent-terracotta">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-primary hover:text-accent-terracotta">
+              <a href="https://www.linkedin.com/in/ahmed-badawy-61bb7a213/" target="_blank" className="text-primary hover:text-accent-terracotta">
                 <Twitter size={20} />
               </a>
             </div>
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/about"
+                  href="/footer-pages/about"
                   className="hover:underline hover:text-primary"
                 >
                   About Us
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href="/footer-pages/blog"
                   className="hover:underline hover:text-primary"
                 >
                   Blog
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/faq"
+                  href="/footer-pages/faq"
                   className="hover:underline hover:text-primary"
                 >
                   FAQs
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/wholesale"
+                  href="/footer-pages/wholesale"
                   className="hover:underline hover:text-primary"
                 >
                   Wholesale Inquiries
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/privacy"
+                  href="/footer-pages/privacy"
                   className="hover:underline hover:text-primary"
                 >
                   Privacy Policy
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href="/footer-pages/terms"
                   className="hover:underline hover:text-primary"
                 >
                   Terms of Service
@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/shipping"
+                  href="/footer-pages/shipping"
                   className="hover:underline hover:text-primary"
                 >
                   Shipping Policy
@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/returns"
+                  href="/footer-pages/returns"
                   className="hover:underline hover:text-primary"
                 >
                   Returns & Refunds
@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/cookies"
+                  href="/footer-pages/cookies"
                   className="hover:underline hover:text-primary"
                 >
                   Cookie Policy
@@ -176,7 +176,7 @@ const Footer: React.FC = () => {
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-4 py-2 rounded-md border border-background focus:outline-none focus:ring-2 focus:ring-primary"
+              className="flex-1 px-4 py-2 bg-background rounded-md border border-background focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
             <button

@@ -166,7 +166,7 @@ export default function ProductsPage() {
               <input
                 type="text"
                 placeholder="Cerca prodotti..."
-                className="w-full pl-10 pr-4 py-2 border border-secondary rounded-lg bg-secondary text-foreground placeholder:text-foreground/50"
+                className="w-full pl-10 pr-4 py-2 border border-stone-300 rounded-lg bg-secondary text-foreground placeholder:text-foreground/50"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -174,7 +174,7 @@ export default function ProductsPage() {
 
             {/* Sort */}
             <select
-              className="w-full px-4 py-2 border border-secondary rounded-lg bg-secondary text-foreground"
+              className="w-full px-4 py-2 border border-stone-300 rounded-lg bg-secondary text-foreground"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
@@ -188,7 +188,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Price Range Dropdown */}
             <select
-              className="w-full px-4 py-2 border border-secondary rounded-lg bg-secondary text-foreground"
+              className="w-full px-4 py-2 border border-stone-300 rounded-lg bg-secondary text-foreground"
               value={priceRange}
               onChange={(e) => {
                 setPriceRange(e.target.value);
@@ -208,7 +208,7 @@ export default function ProductsPage() {
               <input
                 type="number"
                 placeholder="Prezzo min €"
-                className="w-1/2 px-4 py-2 border border-secondary rounded-lg bg-secondary text-foreground placeholder:text-foreground/50"
+                className="w-1/2 px-4 py-2 border border-stone-300 rounded-lg bg-secondary text-foreground placeholder:text-foreground/50"
                 value={minPrice}
                 onChange={(e) => {
                   setMinPrice(e.target.value);
@@ -221,7 +221,7 @@ export default function ProductsPage() {
               <input
                 type="number"
                 placeholder="Prezzo max €"
-                className="w-1/2 px-4 py-2 border border-secondary rounded-lg bg-secondary text-foreground placeholder:text-foreground/50"
+                className="w-1/2 px-4 py-2 border border-stone-300 rounded-lg bg-secondary text-foreground placeholder:text-foreground/50"
                 value={maxPrice}
                 onChange={(e) => {
                   setMaxPrice(e.target.value);

@@ -45,9 +45,10 @@ const AboutPage = () => {
             </div>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/images/italian-tailor.jpg"
+                src="/images/who-are-we.jpg"
                 alt="Sarto italiano al lavoro"
                 fill
+                priority
                 className="object-cover"
               />
             </div>

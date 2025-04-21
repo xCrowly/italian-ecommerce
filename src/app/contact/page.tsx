@@ -87,7 +87,7 @@ export default function ContactPage() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-foreground"
+              className="block text-sm font-bold text-foreground"
             >
               Nome
             </label>
@@ -97,13 +97,13 @@ export default function ContactPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="mt-1 block w-full border border-secondary bg-gray-100 rounded-lg p-2"
+              className="mt-1 block w-full border border-stone-300 bg-gray-50 rounded-lg p-2"
             />
           </div>
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-foreground"
+              className="block text-sm font-bold text-foreground"
             >
               Email
             </label>
@@ -113,13 +113,13 @@ export default function ContactPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="mt-1 block w-full border border-secondary bg-gray-100 rounded-lg p-2"
+              className="mt-1 block w-full border border-stone-300 bg-gray-50 rounded-lg p-2"
             />
           </div>
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-foreground"
+              className="block text-sm font-bold text-foreground"
             >
               Messaggio
             </label>
@@ -128,13 +128,13 @@ export default function ContactPage() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
-              className="mt-1 block w-full border border-secondary bg-gray-100 rounded-lg p-2"
+              className="mt-1 block w-full border border-stone-300 bg-gray-50 rounded-lg p-2"
               rows={4}
             />
           </div>
           <Button
             type="submit"
-            className="bg-primary p-5 hover:bg-primary/90 text-white"
+            className="bg-primary py-3 px-5 hover:bg-primary/90 text-white"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Invio..." : "Invia Messaggio"}

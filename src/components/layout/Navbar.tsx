@@ -63,7 +63,7 @@ export default function Navbar() {
               Prodotti
             </Link>
             <Link
-              href="/about"
+              href="/footer-pages/about"
               className={`${
                 pathname === "/about" ? "text-primary" : "text-foreground"
               } hover:text-primary transition-colors`}
