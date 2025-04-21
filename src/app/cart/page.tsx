@@ -97,12 +97,12 @@ export default function CartPage() {
                             <select
                               id={`quantity-${item.id}`}
                               value={item.quantity}
-                              onChange={(e) =>
-                                updateQuantity(
-                                  item.id,
-                                  parseInt(e.target.value)
-                                )
-                              }
+                              onChange={(e) => {
+                                const newQuantity = Number(e.target.value);
+                                if (!isNaN(newQuantity) && newQuantity > 0) {
+                                  updateQuantity(item.id, newQuantity);
+                                }
+                              }}
                               className="border border-background rounded-md py-1 px-2 text-foreground bg-white"
                             >
                               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
