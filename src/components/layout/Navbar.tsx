@@ -106,7 +106,7 @@ export default function Navbar() {
               {/* Enhanced Cart Dropdown */}
               {isDropdownOpen && (
                 <div 
-                  className="absolute right-0 top-16 w-96 bg-white rounded-lg shadow-xl border border-gray-100 z-50 max-h-[80vh] overflow-y-auto"
+                  className="absolute right-0 top-16 w-[95vw] md:w-96 bg-white rounded-lg shadow-xl border border-gray-100 z-50 max-h-[80vh] overflow-y-auto"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -182,7 +182,13 @@ export default function Navbar() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Link href="/cart" className="relative">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsDropdownOpen(!isDropdownOpen);
+                }}
+                className="relative"
+              >
                 <CartIcon
                   className={`h-6 w-6 text-foreground hover:text-primary transition-transform ${
                     cartAnimation ? "animate-bounce scale-125" : ""
@@ -197,12 +203,12 @@ export default function Navbar() {
                     {itemCount}
                   </span>
                 )}
-              </Link>
+              </button>
 
               {/* Enhanced Cart Dropdown */}
               {isDropdownOpen && (
                 <div 
-                  className="absolute right-0 top-16 w-96 bg-white rounded-lg shadow-xl border border-gray-100 z-50 max-h-[80vh] overflow-y-auto"
+                  className="absolute right-[-3rem] md:right-0 top-16 w-[95vw] md:w-96 bg-white rounded-lg shadow-xl border border-gray-100 z-50 max-h-[80vh] overflow-y-auto"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
