@@ -7,6 +7,127 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchFeaturedProducts } from "@/lib/api";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
+import { useMemo } from "react";
+
+// Separate client component for animations to avoid hydration issues
+const FloatingImages = () => {
+  // Use predetermined values instead of random ones to avoid hydration mismatches
+  const floatingImages = useMemo(() => {
+    // Predefined animation configurations for consistent server/client rendering
+    const imageConfigs = [
+      { x: 8.01, y: 5.56, size: 20.71, duration: 30.61, clockwise: true, delay: -5.66 },
+      { x: 37.07, y: 2.60, size: 17.37, duration: 21.90, clockwise: true, delay: -1.70 },
+      { x: 71.46, y: 2.59, size: 19.16, duration: 23.61, clockwise: false, delay: -9.62 },
+      { x: 4.19, y: 36.70, size: 15.62, duration: 15.75, clockwise: true, delay: -4.06 },
+      { x: 36.52, y: 34.68, size: 17.62, duration: 32.57, clockwise: false, delay: -18.55 },
+      { x: 73.26, y: 40.83, size: 18.46, duration: 16.01, clockwise: false, delay: -6.37 },
+      { x: 6.09, y: 71.67, size: 13.43, duration: 22.60, clockwise: true, delay: -12.52 },
+      { x: 33.52, y: 67.62, size: 18.43, duration: 21.51, clockwise: false, delay: -17.14 },
+      { x: 74.93, y: 71.77, size: 13.98, duration: 23.57, clockwise: false, delay: -19.20 },
+    ];
+
+    const images = [
+      "/header-images/hat-157581_640.png",
+      "/header-images/t-shirt-153366_640.png", 
+      "/header-images/pink-baby-shoes-7238781_640.png",
+      "/header-images/apparel-162192_640.png",
+      "/header-images/hat-310050_640.png",
+      "/header-images/tennis-7968714_640.png",
+      "/header-images/bathroom-1299704_640.png",
+      "/header-images/shorts-149409_640.png",
+      "/header-images/thongs-310437_640.png",
+    ];
+
+    return images.map((src, index) => {
+      const config = imageConfigs[index % imageConfigs.length];
+      return {
+        src,
+        x: config.x,
+        y: config.y,
+        size: config.size,
+        animationDuration: config.duration,
+        rotationDirection: config.clockwise ? 1 : -1,
+        delay: config.delay,
+      };
+    });
+  }, []);
+
+  return (
+    <>
+      <style jsx>{`
+        @keyframes float {
+          0% {
+            transform: translate(0px, 0px);
+          }
+          25% {
+            transform: translate(10px, 10px);
+          }
+          50% {
+            transform: translate(0px, 20px);
+          }
+          75% {
+            transform: translate(-10px, 10px);
+          }
+          100% {
+            transform: translate(0px, 0px);
+          }
+        }
+        
+        @keyframes rotate-clockwise {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        
+        @keyframes rotate-counterclockwise {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(-360deg);
+          }
+        }
+        
+        .floating-image {
+          will-change: transform;
+        }
+      `}</style>
+      <div className="absolute inset-0 overflow-hidden">
+        {floatingImages.map((img, index) => (
+          <div
+            key={index}
+            className="absolute pointer-events-none floating-image"
+            style={{
+              left: `${img.x}%`,
+              top: `${img.y}%`,
+              width: `${img.size}%`,
+              height: "auto",
+              animationName: `float, ${img.rotationDirection > 0 ? "rotate-clockwise" : "rotate-counterclockwise"}`,
+              animationDuration: `${img.animationDuration}s, ${img.animationDuration * 2}s`,
+              animationTimingFunction: "ease-in-out, linear",
+              animationIterationCount: "infinite, infinite",
+              animationDelay: `${img.delay}s`,
+              animationFillMode: "none",
+            }}
+          >
+            <Image
+              src={img.src}
+              alt="Italian product"
+              width={200}
+              height={200}
+              className="w-full h-auto object-contain"
+              priority={index < 4} // Only prioritize loading the first 4 images
+              loading={index >= 4 ? "lazy" : undefined}
+            />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
 
 export default function HomePage() {
   const { data: products, isLoading } = useQuery({
@@ -14,42 +135,20 @@ export default function HomePage() {
     queryFn: fetchFeaturedProducts,
   });
   const { addToCart } = useCart();
+
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-primary text-secondary min-h-[90vh]">
-        <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-0">
-          <div className="relative w-full h-full overflow-hidden transform transition-transform duration-700 hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent mix-blend-overlay"></div>
-            <Image
-              src="/images/header-1.jpg"
-              alt="Italian clothing storage"
-              className="w-full h-full object-cover blur-[2px] brightness-75"
-              fill
-              priority
-              sizes="50vw"
-            />
-          </div>
-          <div className="relative w-full h-full overflow-hidden transform transition-transform duration-700 hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent mix-blend-overlay"></div>
-            <Image
-              src="/images/header-2.jpg"
-              alt="Italian retail display"
-              className="w-full h-full object-cover blur-[2px] brightness-75"
-              fill
-              priority
-              sizes="50vw"
-            />
-          </div>
-        </div>
+      <section className="relative bg-white text-primary min-h-[90vh]">
+        <FloatingImages />
         <div className="relative h-screen flex items-center justify-center">
           <div className="max-w-7xl m-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="text-center">
-              <div className="py-16  bg-gradient-to-br from-cyan-950 to-gray-950 p-8 rounded-3xl border border-white/75 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+              <div className="py-16 bg-white/50 backdrop-blur-md p-8 rounded-3xl border border-primary/20 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-terracotta drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)]">
                   Autentici Prodotti Italiani
                 </h1>
-                <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
+                <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-primary drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
                   {`Scopri la tradizione e l'artigianalità italiana direttamente a casa tua`}
                 </p>
                 <Link href="/products">
@@ -97,11 +196,6 @@ export default function HomePage() {
                 >
                   <Link href={`/products/${product.id}`}>
                     <div className="aspect-square bg-white relative overflow-hidden">
-                      {/* <img
-                        src={product.image}
-                        alt={product.name}
-                        className="object-cover w-full h-full p-4"
-                      /> */}
                       <div className="relative w-full h-full p-4">
                         <Image
                           src={product.image}
